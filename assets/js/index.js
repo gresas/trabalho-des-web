@@ -4,6 +4,7 @@ import '../css/brigadeiro.css';
 import '../css/styles.css';
 import * as bootstrap from 'bootstrap'
 import { Product } from './entity'
+import './trabalho03'
 
 let oldValue;
 window.addEventListener('scroll', function(e){
@@ -72,6 +73,19 @@ let product_template = (product) => {
                  <span class="price product-price-amount">${product.price}€</span>
               </div>
            </div>
+
+           <div class="d-flex pt-3 justify-content-center thumbs-wrapper">
+                <div class="thumbs-up wrapper pl-3">
+                    <button class="btn btn-lg bg-transparent">
+                        <i class="fa-regular fa-thumbs-up">0</i>
+                    </button>
+                </div>
+                <div class="thumbs-down wrapper pl-3">
+                    <button class="btn btn-lg bg-transparent">
+                        <i class="fa-regular fa-thumbs-down">0</i>
+                    </button>
+                </div>
+            </div>
         </div>`
 };
 
