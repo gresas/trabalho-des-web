@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link href="../assets/css/bootstrap.css" rel="stylesheet">
+   <link href="../assets/css/all.css" rel="stylesheet">
+   <link href="../assets/css/styles.css" rel="stylesheet">
+   <link href="../assets/css/brigadeiro.css" rel="stylesheet">
+   <title>Bootstrap</title>
+</head>
+
+<body>
+   <nav class="navbar navbar-light bg-transparent navbar-expand fixed-top" style="height: 100px">
+      <div class="container col-11">
+         <a id="header-logo" class="navbar-brand" href="/index.html"><img
+               src="/assets/images/logo-brigadeiro-gourmet-principal.png" style="width: 90px;" alt="RioTurismo"></a>
+         <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav mr-auto">
+            </div>
+            <div class="navbar-nav" id="navbar-nav">
+               <a class="header__shop-secondary-link mr-4" href="/carrinho.html" title="Carrinho">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35.955" viewBox="0 0 32 35.955">
+                     <path
+                        d="M16,0a7.149,7.149,0,0,1,7.071,7.191h6.891L32,35.955H0L2.037,7.191H8.989A7.06,7.06,0,0,1,16,0ZM8.929,10.787H5.273L3.775,32.36h24.39l-1.5-21.573H23.011V16.18H19.476V10.787H12.464V16.18H8.929ZM16,3.6a3.594,3.594,0,0,0-3.536,3.6h7.071A3.634,3.634,0,0,0,16,3.6Z"
+                        fill="#66331c"></path>
+                  </svg>
+               </a>
+               <div class="dropdown container-fluid">
+                  <div class="nav-link nav-item header__shop-secondary-item" data-toggle="dropdown"
+                     data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="opacity: 1;">
+                     <button class="burger" type="button"><span class="burger-text">Menu</span></button>
+                  </div>
+                  <ul class="dropdown-menu dropdown-content dropdown-menu-end dropdown-menu-lg-start nav__shop-text">
+                     <li class="dropdown-item">
+                        <a href="#home">Home</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#novidades">Novidades</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#brigadeiros">Brigadeiros</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#cakes">Bolos</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#brownies">Brownies</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#cookies">Cookies</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#about">Sobre</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#contato">Contato</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#newsletter">Newsletter</a>
+                     </li>
+                     <li class="dropdown-item">
+                        <a href="#minha-conta">Minha Conta</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <hr class="my-5">
+   <!-- Section Carrinho -->
+   <div class="container">
+      <div class="post-single about-section">
+         <h3 class="post-title">Carrinho</h3>
+      </div>
+   </div>
+   <hr class="my-2">
+   <div class="container">
+      <form class="form" action="#carrinho/"
+         method="post">
+         <table class="table-woocommerce shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+            cellspacing="0">
+            <thead>
+               <tr>
+                  <th class="product-name">Produto</th>
+                  <th class="product-price">Preço</th>
+                  <th class="product-quantity">Quantidade</th>
+                  <th class="product-subtotal">Total</th>
+                  <th class="product-remove">&nbsp;</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr class="cart_item">
+                  <td class="product-thumbnail product-name" data-title="Produto">
+                     <div class="d-flex flex-column align-items-start">
+                        <a class="pl-5" href="#produto/brownie-tradicional/"><img width="600" height="600"
+                              src="/assets/images/Brownie-tradicional.jpg" alt="" loading="lazy"
+                              srcset="/assets/images/Brownie-tradicional.jpg 600w"
+                              sizes="(max-width: 600px) 100vw, 600px"></a>
+                        <a href="#produto/brownie-tradicional/">Brownie
+                           Tradicional</a>
+                     </div>
+                  </td>
+                  <td class="product-price" data-title="Preço">
+                     <span>4.50€</span>
+                  </td>
+                  <td class="product-quantity" data-title="Quantidade">
+                     <div class="quantity">
+                        <span class="modify-qty minus" data-click="minus"></span>
+                        <label class="screen-reader-text" for="quantity-x">Quantidade de Brownie
+                           Tradicional</label>
+                        <input type="number" id="quantity-x" class="input-text qty text" step="1" min="0"
+                           name="cart[x][qty]" value="1" title="Qtd" size="4" inputmode="numeric">
+                        <span class="modify-qty plus" data-click="plus"></span>
+                     </div>
+                  </td>
+                  <td class="product-subtotal" data-title="Subtotal">
+                     <span>4.50€</span>
+                  </td>
+                  <td class="product-remove">
+                     <a href="#carrinho/remove_item" class="remove" aria-label="Remover este item">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                           width="26px" height="26px">
+                           <g>
+                              <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717	L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                                             c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                                             L284.286,256.002z"></path>
+                           </g>
+                        </svg>
+                     </a>
+                     <a href="#carrinho/remove_item" class="remove-mobile text-link"
+                        aria-label="Remover este item">Remover</a>
+                  </td>
+               </tr>
+               <tr class="cart_item">
+                  <td class="product-thumbnail product-name" data-title="Produto">
+                     <a class="pl-5" href="#produto/brigadeiro-de-pote-150g/"><img width="600" height="600"
+                           src="/assets/images/brigadeiro-pote.jpg"
+                           class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy"
+                           srcset="/assets/images/brigadeiro-pote.jpg 600w" sizes="(max-width: 600px) 100vw, 600px"></a>
+                     <a href="#produto/brigadeiro-de-pote-150g">Brigadeiro
+                        de pote 150g
+                     </a>
+                     <dl class="variation">
+                        <div class="">
+                           <dt class="variation-SabordoBrigadeiro">Sabor do Brigadeiro:</dt>
+                           <dd class="variation-SabordoBrigadeiro">
+                              <p>Casadinho</p>
+                           </dd>
+                        </div>
+                     </dl>
+                  </td>
+                  <td class="product-price" data-title="Preço">
+                     <span>5.50€</span>
+                  </td>
+                  <td class="product-quantity" data-title="Quantidade">
+                     <div class="quantity">
+                        <span class="modify-qty minus" data-click="minus"></span>
+                        <label class="screen-reader-text" for="quantity_x">Quantidade de Brigadeiro de pote
+                           150g</label>
+                        <input type="number" id="quantity_x" class="input-text qty text" step="1" min="0"
+                           name="cart[x][qty]" value="1" title="Qtd" size="4"
+                           inputmode="numeric">
+                        <span class="modify-qty plus" data-click="plus"></span>
+                     </div>
+                  </td>
+                  <td class="product-subtotal" data-title="Subtotal">
+                     <span>5.50€</span>
+                  </td>
+                  <td class="product-remove">
+                     <a href="#carrinho/remove_item"
+                        class="remove" aria-label="Remover este item">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                           width="26px" height="26px">
+                           <g>
+                              <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717	L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                                             c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                                             L284.286,256.002z"></path>
+                           </g>
+                        </svg>
+                     </a> <a
+                        href="#carrinho/remove_item"
+                        class="remove-mobile text-link" aria-label="Remover este item">Remover</a>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="actions actions__button">
+            <a class="text-link" href="loja.html">Voltar a Loja</a>
+            <button type="submit" class="button" name="update_cart" value="Actualizar carrinho" disabled=""
+               aria-disabled="true">Actualizar carrinho</button>
+         </div>
+         <div class="actions coupon">
+            <label for="coupon_code">Cupom:</label>
+            <div class="form-group--input-button">
+               <input type="text" name="coupon_code" class="form-control" id="coupon_code" value=""
+                  placeholder="Código do cupom">
+               <button type="submit" class="button button--colorfull" name="apply_coupon" value="Aplicar cupom">Aplicar
+                  cupom</button>
+            </div>
+         </div>
+      </form>
+      <div class="cart-collaterals">
+         <div class="cart_totals ">
+            <table>
+               <tbody>
+                  <tr class="cart-subtotal">
+                     <th>Subtotal</th>
+                     <td data-title="Subtotal"><span>10.00€</span></td>
+                  </tr>
+                  <tr class="order-total">
+                     <th>Total</th>
+                     <td data-title="Total"><strong><span>10.00€</span></strong> <small class="includes_tax">(inclui
+                           <span>1.15€</span> IVA)</small></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+               <a href="#finalizar-compra/"
+                  class="button button--colorfull button--full checkout-button alt wc-forward">
+                  Finalizar compra</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="my-3">
+   <!-- Footer -->
+   <footer class="text-center text-lg-start text-muted">
+
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom main-footer">
+         <!-- Left -->
+         <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+         </div>
+         <!-- Left -->
+
+         <!-- Right -->
+         <div>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+               <i class="fab fa-github"></i>
+            </a>
+         </div>
+         <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+
+      <div class="main-footer container-fluid text-center text-md-start">
+         <!-- Grid row -->
+         <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+               <!-- Content -->
+               <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>Company name
+               </h6>
+               <p>
+                  Here you can use rows and columns to organize your footer content. Lorem ipsum
+                  dolor sit amet, consectetur adipisicing elit.
+               </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+               <!-- Links -->
+               <h6 class="text-uppercase fw-bold mb-4">
+                  Products
+               </h6>
+               <p>
+                  <a href="#!" class="text-reset">Angular</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">React</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">Vue</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">Laravel</a>
+               </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+               <!-- Links -->
+               <h6 class="text-uppercase fw-bold mb-4">
+                  Useful links
+               </h6>
+               <p>
+                  <a href="#!" class="text-reset">Pricing</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">Settings</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">Orders</a>
+               </p>
+               <p>
+                  <a href="#!" class="text-reset">Help</a>
+               </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+               <!-- Links -->
+               <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+               <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+               <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  info@example.com
+               </p>
+               <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+               <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+         </div>
+         <!-- Grid row -->
+      </div>
+
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: #532815; color: white;">
+         © 2021 Copyright:
+         <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+   </footer>
+
+
+   <script src="main.js"></script>
+   
+</body>
+
+</html>
