@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+<!-- Section Hero -->
+<section class="section section--hero section--intro section--pattern">
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="hero-section__title" style="opacity: 1; transform: translate(0px, 0px);">
+                <span>Os ingredientes secretos são amor e alegria!</span>
+            </div>
+        </div>
+    </div>
+    <section class="section--product-highlight">
+        <video class="video" loop="" muted="" autoplay="" playsinline="" src="{% static 'images/brigadeiro.mp4' %}"></video>
+        <a class="title" href="{% url 'store:index' %}" style="opacity: 1; transform: translate(0px, 0px);">Venha conhecer a
+            nossa
+            loja!</a>
+    </section>
+</section>
+
+<!-- Section About -->
+<div class="container">
+    <div class="row about-section">
+        <div class="col-lg-6 col-md-6 mb-3">
+            <h3 class="about-title">Sobre</h3>
+            <p>Os ingredientes secretos são amor e alegria!</p>
+            <p>Irresistíveis. Pode parecer cliché, mas esta é mesmo a palavra que melhor descreve os brigadeiros (e
+                restantes iguarias) da Brigadeiro Gourmet LX, um projeto que depois de conquistar o paladar dos
+                londrinos
+                chega a Portugal, pela mão de Roberta Medina, Kátia Hickmann, Catarina Marques Vieira e Lucas
+                Nogueira,
+                com o objetivo de espalhar alegria em forma de brigadeiro.</p>
+            <p>Saboreie o verdadeiro brigadeiro brasileiro, feito com os ingredientes mais requintados escolhidos
+                para
+                levar até si uma experiência gourmet.</p>
+        </div>
+
+        <div class="col-lg-6 col-md-6 mb-3">
+            <div class="card">
+                <img src="{% static 'images/WhatsApp-Image-2022-03-17-at-15.03.35-600x600.jpeg' %}" alt="foto-brigadeiro">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-3">
+            <div class="card">
+                <img src="{% static 'images/Caramelo-Salgado.jpg' %}" alt="foto-brigadeiro-2">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-3" style="align-self: center;">
+            <div class="card" style="transform: translate(0px, 0px); opacity: 1;">
+                <span class="highlight">A felicidade é só uma questão de chocolate!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Products-Preview -->
+    <hr class="my-3" />
+    <div class="row preview-section">
+        <div class="col-lg-6 col-md-6 mb-3">
+            <div class="card">
+                <h3 class="about-title">Nossos Sabores</h3>
+                <p>Oferecemos 16 sabores diferentes de Brigadeiro – Ao leite, Casadinho, Branco, Palha Italiana,
+                    Limão,
+                    Amargo com Pistachio, Coco, Churros, Avelã, Arco-Íris, Caramelo Salgado, Doce de Leite, Morango,
+                    Sensação e Romeu e Julieta. Também há brownies (Tradicional ou com Nozes), cookies artesanais
+                    New York
+                    style (Clássicas, Double Chocolate ou Red Velvet) e bolos caseiros ao gosto de cada um ( Naked
+                    Cake,
+                    Bolo Tradicional e Bolo Vulcão), com possibilidade de escolher o tamanho, o sabor da massa
+                    (entre
+                    manteiga, chocolate ou cenoura) e da cobertura e recheio – que, claro está, será de brigadeiro.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-3">
+            <a href="#produtos/cake">
+                <div>
+                    <img class="card-img" src="{% static 'images/Medium-cake.jpg' %}">
+                </div>
+                <div class="card-img-overlay d-flex justify-content-center align-items-end">
+                    <img class="icon-images" src="{% static 'images/ICON-CAKE.png' %}">
+                    <h4 class="card-text category-list-title">Bolos</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr class="my-1 d-none d-sm-block" />
+    <div class="row preview-section">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card">
+                <a href="#produtos/brigadeiro">
+                    <img class="card-img" src="{% static 'images/Brigadeiro_Truffles.jpg' %}">
+                    <div class="card-img-overlay d-flex justify-content-center align-items-end">
+                        <img class="icon-images p-2" src="{% static 'images/ICON-BRIGADEIRO.png' %}">
+                        <h4 class="card-text category-list-title">Brigadeiro</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card">
+                <a href="#produtos/brownie">
+                    <div>
+                        <img class="card-img" src="{% static 'images/Brownie-scaled.jpg' %}">
+                    </div>
+                    <div class="card-img-overlay d-flex justify-content-center align-items-end">
+                        <img class="icon-images p-2" src="{% static 'images/ICON-BROWNIE.png' %}">
+                        <h4 class="card-text category-list-title">Brownies</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card">
+                <a href="#produtos/cookie">
+                    <div>
+                        <img class="card-img" src="{% static 'images/Cookies_image.jpeg' %}">
+                    </div>
+                    <div class="card-img-overlay d-flex justify-content-center align-items-end">
+                        <img class="icon-images p-2" src="{% static 'images/ICON-COOKIE.png' %}">
+                        <h4 class="card-text category-list-title">Cookies</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row blog-title">
+            <div class="d-flex flex-column">
+                <div class="mb-2" style="border: 0.3px solid #66331cb7;"></div>
+                <img src="{% static 'images/icon-coroa-brigadeiro.png' %}" alt="">
+            </div>
+            <h4 class="about-title" style="padding-left: 10px;">Blog</h4>
+        </div>
+        <a class="blog-text-link" style="bottom: 47px;" href="#blog">Veja tudo no nosso Blog</a>
+    </div>
+
+    <hr class="my-2">
+
+    <div class="row mx-auto my-auto justify-content-center">
+        <div id="recipeCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="col-md-6">
+                        <div class="card d-flex justify-content-center align-items-end">
+                            <div class="card-img">
+                                <img src="{% static 'images/carrousel_1.jpeg' %}" class="img-fluid">
+                            </div>
+                            <div class="card-img-overlay">
+                                <h2 class="category-list-title">Abrimos o primeiro Quiosque Brigadeiro Gourmet Lx!
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="{% static 'images/carrousel_2.jpg' %}" class="img-fluid">
+                            </div>
+                            <div class="card-img-overlay">
+                                <h2 class="category-list-title">Como encomendar a sua Magic Box!?</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="{% static 'images/carrousel_3.jpg' %}" class="img-fluid">
+                            </div>
+                            <div class="card-img-overlay">
+                                <h2 class="category-list-title">Natal quase quase à porta!</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev bg-transparent" href="#recipeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next bg-transparent" href="#recipeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<hr class="my-3">
+{% endblock %}

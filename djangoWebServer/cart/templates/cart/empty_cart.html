@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<hr class="my-5">
+<!-- Section Carrinho -->
+<div class="container">
+    <div class="post-single about-section">
+        <h3 class="post-title">Carrinho</h3>
+    </div>
+</div>
+<hr class="my-2">
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex">
+            <span class="badge text-bg-primary p-5" style="font-size: 20px;">YOUR CART IS CURRENTLY EMPTY.</span>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex">
+            <a class="wc-backward" href="{% url 'store:index' %}">
+                <span class="text-link">Voltar a Loja</span>
+            </a>
+        </div>
+    </div>
+</div>
+<hr class="my-3">
+{% endblock %}

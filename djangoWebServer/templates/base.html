@@ -1,0 +1,248 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/brigadeiro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>
+        {% block title %}Brigadeiro Gourmet{% endblock %}
+    </title>
+    <style>
+        {
+            % block customStyle %
+        }
+
+
+        {
+            % endblock %
+        }
+    </style>
+
+</head>
+
+<body class="scrollbar">
+    {% block navbar %}
+    <nav class="navbar navbar-light bg-transparent navbar-expand fixed-top" style="height: 100px">
+        <div class="container col-11">
+            <a id="header-logo" class="navbar-brand" href="{% url 'index' %}"><img
+                    src="{% static 'images/logo-brigadeiro-gourmet-principal.png' %}" style="width: 90px;"
+                    alt="Logo Brigadeiro"></a>
+            <div class="collapse navbar-collapse" id="menu">
+                <div class="navbar-nav mr-auto">
+                </div>
+                <div class="navbar-nav" id="navbar-nav">
+                    <a class="header__shop-secondary-link mr-4" href="{% url 'cart:index' %}" title="Carrinho">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35.955" viewBox="0 0 32 35.955">
+                                    <path
+                                        d="M16,0a7.149,7.149,0,0,1,7.071,7.191h6.891L32,35.955H0L2.037,7.191H8.989A7.06,7.06,0,0,1,16,0ZM8.929,10.787H5.273L3.775,32.36h24.39l-1.5-21.573H23.011V16.18H19.476V10.787H12.464V16.18H8.929ZM16,3.6a3.594,3.594,0,0,0-3.536,3.6h7.071A3.634,3.634,0,0,0,16,3.6Z"
+                                        fill="#66331c"></path>
+                                </svg>
+                            </div>
+                            {% if cart and cart.has_products %}
+                            
+                            <div class="card-img-overlay d-flex flex-column justify-content-end ml-3 mb-2">
+                                <span class="dot" style="text-align: center; color: white;">{{ cart.product_list_length }}</span>
+                            </div>
+                            
+                            {% endif %}
+
+                        </div>
+                    </a>
+                    <div class="dropdown container-fluid">
+
+                        <div class="nav-link nav-item header__shop-secondary-item" data-toggle="dropdown"
+                            data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
+                            style="opacity: 1;">
+                            <button class="burger" type="button"><span class="burger-text">Menu</span></button>
+                        </div>
+                        <ul
+                            class="dropdown-menu dropdown-content dropdown-menu-end dropdown-menu-lg-start nav__shop-text">
+                            <li class="dropdown-item">
+                                <a href="#home">Home</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#novidades">Novidades</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#brigadeiros">Brigadeiros</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#cakes">Bolos</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#brownies">Brownies</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#cookies">Cookies</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#about">Sobre</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#contato">Contato</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#newsletter">Newsletter</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#minha-conta">Minha Conta</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer class="text-center text-lg-start text-muted">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 main-footer">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+
+        <div class="main-footer container-fluid text-center text-md-start">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Company name
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Angular</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">React</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Vue</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Pricing</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Settings</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Orders</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #532815; color: white;">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    {% endblock %}
+
+    <script src="{% static 'js/jquery-3.6.1.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/jquery.mask.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            {% block domready %}
+
+            {% endblock %}
+        });
+    </script>
+</body>
+
+</html>

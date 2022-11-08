@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<hr class="my-5">
+   <!-- Section Carrinho -->
+   <div class="container">
+      <div class="post-single about-section">
+         <h3 class="post-title">Carrinho</h3>
+      </div>
+   </div>
+   <hr class="my-2">
+   <div class="container">
+      <form class="form" action="#carrinho/"
+         method="post">
+         <table class="table-woocommerce shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+            cellspacing="0">
+            <thead>
+               <tr>
+                  <th class="product-name">Produto</th>
+                  <th class="product-price">Preço</th>
+                  <th class="product-quantity">Quantidade</th>
+                  <th class="product-subtotal">Total</th>
+                  <th class="product-remove">&nbsp;</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for bag in cart.get_product_list %}
+                  <tr class="cart_item">
+                     <td class="product-thumbnail product-name" data-title="Produto">
+                        <div class="d-flex flex-column align-items-start">
+                           <a class="pl-5" href="/produto/{{ bag.product.id }}/}"><img width="600" height="600"
+                                 src="{% static 'images' %}/{{ bag.product.image_name }}" alt="" loading="lazy"
+                                 srcset="{% static 'images' %}/{{ bag.product.image_name }} 600w"
+                                 sizes="(max-width: 600px) 100vw, 600px"></a>
+                           <a href="{% url 'product:index' bag.product.id %}">{{ bag.product.name }}</a>
+                        </div>
+                     </td>
+                     <td class="product-price" data-title="Preço">
+                        <span>{{ bag.product.price }}€</span>
+                     </td>
+                     <td class="product-quantity" data-title="Quantidade">
+                        <div class="quantity">
+                           <span class="modify-qty minus" data-click="minus"></span>
+                           <label class="screen-reader-text" for="quantity-x">Quantidade de {{ bag.product.name }}</label>
+                           <input type="number" id="quantity-x" class="input-text qty text" step="1" min="0"
+                              name="cart[x][qty]" value="1" title="Qtd" size="4" inputmode="numeric">
+                           <span class="modify-qty plus" data-click="plus"></span>
+                        </div>
+                     </td>
+                     <td class="product-subtotal" data-title="Subtotal">
+                        <span>{% widthratio bag.product.price 1 bag.quantity %}€</span>
+                     </td>
+                     <td class="product-remove">
+                        <a href="#carrinho/remove_item" class="remove" aria-label="Remover este item">
+                           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                              width="26px" height="26px">
+                              <g>
+                                 <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717	L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                                                c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                                                L284.286,256.002z"></path>
+                              </g>
+                           </svg>
+                        </a>
+                        <a href="#carrinho/remove_item" class="remove-mobile text-link"
+                           aria-label="Remover este item">Remover</a>
+                     </td>
+                  </tr>
+               {% endfor %}
+               <!-- <tr class="cart_item">
+                  <td class="product-thumbnail product-name" data-title="Produto">
+                     <div class="d-flex flex-column align-items-start">
+                        <a class="pl-5" href="#produto/brownie-tradicional/"><img width="600" height="600"
+                              src="/assets/images/Brownie-tradicional.jpg" alt="" loading="lazy"
+                              srcset="/assets/images/Brownie-tradicional.jpg 600w"
+                              sizes="(max-width: 600px) 100vw, 600px"></a>
+                        <a href="#produto/brownie-tradicional/">Brownie
+                           Tradicional</a>
+                     </div>
+                  </td>
+                  <td class="product-price" data-title="Preço">
+                     <span>4.50€</span>
+                  </td>
+                  <td class="product-quantity" data-title="Quantidade">
+                     <div class="quantity">
+                        <span class="modify-qty minus" data-click="minus"></span>
+                        <label class="screen-reader-text" for="quantity-x">Quantidade de Brownie
+                           Tradicional</label>
+                        <input type="number" id="quantity-x" class="input-text qty text" step="1" min="0"
+                           name="cart[x][qty]" value="1" title="Qtd" size="4" inputmode="numeric">
+                        <span class="modify-qty plus" data-click="plus"></span>
+                     </div>
+                  </td>
+                  <td class="product-subtotal" data-title="Subtotal">
+                     <span>4.50€</span>
+                  </td>
+                  <td class="product-remove">
+                     <a href="#carrinho/remove_item" class="remove" aria-label="Remover este item">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                           width="26px" height="26px">
+                           <g>
+                              <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717	L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                                             c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                                             L284.286,256.002z"></path>
+                           </g>
+                        </svg>
+                     </a>
+                     <a href="#carrinho/remove_item" class="remove-mobile text-link"
+                        aria-label="Remover este item">Remover</a>
+                  </td>
+               </tr>
+
+               <tr class="cart_item">
+                  <td class="product-thumbnail product-name" data-title="Produto">
+                     <a class="pl-5" href="#produto/brigadeiro-de-pote-150g/"><img width="600" height="600"
+                           src="/assets/images/brigadeiro-pote.jpg"
+                           class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy"
+                           srcset="/assets/images/brigadeiro-pote.jpg 600w" sizes="(max-width: 600px) 100vw, 600px"></a>
+                     <a href="#produto/brigadeiro-de-pote-150g">Brigadeiro
+                        de pote 150g
+                     </a>
+                     <dl class="variation">
+                        <div class="">
+                           <dt class="variation-SabordoBrigadeiro">Sabor do Brigadeiro:</dt>
+                           <dd class="variation-SabordoBrigadeiro">
+                              <p>Casadinho</p>
+                           </dd>
+                        </div>
+                     </dl>
+                  </td>
+                  <td class="product-price" data-title="Preço">
+                     <span>5.50€</span>
+                  </td>
+                  <td class="product-quantity" data-title="Quantidade">
+                     <div class="quantity">
+                        <span class="modify-qty minus" data-click="minus"></span>
+                        <label class="screen-reader-text" for="quantity_x">Quantidade de Brigadeiro de pote
+                           150g</label>
+                        <input type="number" id="quantity_x" class="input-text qty text" step="1" min="0"
+                           name="cart[x][qty]" value="1" title="Qtd" size="4"
+                           inputmode="numeric">
+                        <span class="modify-qty plus" data-click="plus"></span>
+                     </div>
+                  </td>
+                  <td class="product-subtotal" data-title="Subtotal">
+                     <span>5.50€</span>
+                  </td>
+                  <td class="product-remove">
+                     <a href="#carrinho/remove_item"
+                        class="remove" aria-label="Remover este item">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                           width="26px" height="26px">
+                           <g>
+                              <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717	L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                                             c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                                             L284.286,256.002z"></path>
+                           </g>
+                        </svg>
+                     </a> <a
+                        href="#carrinho/remove_item"
+                        class="remove-mobile text-link" aria-label="Remover este item">Remover</a>
+                  </td>
+               </tr> -->
+            </tbody>
+         </table>
+         <div class="actions actions__button">
+            <a class="text-link" href="{% url 'store:index' %}">Voltar a Loja</a>
+            <button type="submit" class="button" name="update_cart" value="Actualizar carrinho" disabled=""
+               aria-disabled="true">Actualizar carrinho</button>
+         </div>
+         <div class="actions coupon">
+            <label for="coupon_code">Cupom:</label>
+            <div class="form-group--input-button">
+               <input type="text" name="coupon_code" class="form-control" id="coupon_code" value=""
+                  placeholder="Código do cupom">
+               <button type="submit" class="button button--colorfull" name="apply_coupon" value="Aplicar cupom">Aplicar
+                  cupom</button>
+            </div>
+         </div>
+      </form>
+      <div class="cart-collaterals">
+         <div class="cart_totals ">
+            <table>
+               <tbody>
+                  <tr class="cart-subtotal">
+                     <th>Subtotal</th>
+                     <td data-title="Subtotal"><span>10.00€</span></td>
+                  </tr>
+                  <tr class="order-total">
+                     <th>Total</th>
+                     <td data-title="Total"><strong><span>10.00€</span></strong> <small class="includes_tax">(inclui
+                           <span>1.15€</span> IVA)</small></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+               <a href="#finalizar-compra/"
+                  class="button button--colorfull button--full checkout-button alt wc-forward">
+                  Finalizar compra</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="my-3">
+{% endblock %}

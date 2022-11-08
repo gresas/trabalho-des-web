@@ -1,3 +1,8 @@
 node_modules
 duvidas.txt
 /dist
+venv
+.venv
+*.pyc
+*pycache*
+*.sqlite3

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<hr class="my-5">
+   <!-- Section Breadcrumb -->
+   <div class="container-fluid">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+         <a class="breadcrumb__item" href="{% url 'index' %}">Início</a>
+         <a class="breadcrumb__item" href="#categoria-brigadeiro">{{ product.category }}</a>
+         <span class="breadcrumb__item breadcrumb__item--active">{{ product.name }}</span>
+      </nav>
+   </div>
+   <hr class="my-2">
+   <div class="row container">
+      <div class="col-lg-6">
+         {% with 'images/'|add:product.image_name as image_path %}
+            <img class="card-img shadow" src="{% static image_path %}">
+         {% endwith %}
+      </div>
+      <div class="col-lg-6" style="padding-left: 65px;">
+         <div class="card border-0">
+            <div class="card-header bg-transparent">
+               <h1 class="product-title">{{ product.name }}</h1>
+               <div>
+                  <p class="price">
+                     <span class="price product-price-amount">{{ product.price }}€</span>
+                  </p>
+               </div>
+            </div>
+            <div class="container-fluid variations pt-4">
+               <label for="pa_sabor-01">{{ product.flavor }}</label>
+               {% if product.get_flavors_list %}
+               <select id="pa_sabor-01" class="form-control" name="attribute_pa_sabor-01"
+                  data-attribute_name="attribute_pa_sabor-01" data-show_option_none="yes">
+                  <option value="">Escolha uma opção</option>
+                  {% for flavor in product.get_flavors_list %}
+                  <!-- Ao leite/Tradicional -->
+                  <option value="{{ flavor.slug }}" class="attached enabled">{{ flavor }}</option>
+                  {% endfor %}
+               </select>
+               <a class="reset_variations" href="#">Limpar</a>
+               {% endif  %}
+            </div>
+            <div class="hr">
+            </div>
+            <div class="add-btn">
+               <div>
+                  <p class="price">
+                     <span class="price product-price-amount">{{ product.price }}€</span>
+                  </p>
+               </div>
+               <div class="d-flex justify-content-between">
+                  <div class="quantity">
+                     <span class="modify-qty minus" data-click="minus"></span>
+                     <label class="screen-reader-text" for="quantity-x">Quantidade</label>
+                     <input type="number" id="quantity-x" class="input-text qty text" step="1" min="0"
+                        name="cart[x][qty]" value="1" title="Qtd" size="4" inputmode="numeric">
+                     <span class="modify-qty plus" data-click="plus"></span>
+                  </div>
+                  <button type="submit"
+                     class="single_add_to_cart_button button button--colorfull alt">Adicionar</button>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="my-3">
+{% endblock %}
