@@ -2,7 +2,6 @@ from email.policy import default
 from tokenize import blank_re
 from django.db import models
 from category.models import Category
-from pathlib import Path
 
 
 class Flavor(models.Model):    
