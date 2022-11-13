@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: actions-runner-745d469b7d-bbs98
+    runs-on: self-hosted
     strategy:
       max-parallel: 4
       matrix:
